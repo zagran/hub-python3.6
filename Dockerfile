@@ -33,12 +33,6 @@ RUN pip install --upgrade pip
 RUN apt-get install -y libmemcached-dev \
   && rm -rf /var/lib/apt/lists/*
 
-
-# Install project pip requirements
-ADD requirements/base.txt /app/
-RUN cd /app \
-  && pip install -U -r base.txt
-
 EXPOSE 8000
 
 WORKDIR /app
